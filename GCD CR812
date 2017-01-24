@@ -6,7 +6,7 @@ int gcd(int x, int y)
     if (y==0)
         return x;
     else
-        gcd(y,x%y); //to implement Euclid's Method
+        gcd(y,x%y); //to implement Euclid's Method (https://www.youtube.com/watch?v=cOwyHTiW4KE) for further refernce :D
 }
 int main()
 {
