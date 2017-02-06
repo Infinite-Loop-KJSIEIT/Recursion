@@ -1,3 +1,4 @@
+//GCD @CR812
 #include <iostream>
 using namespace std;
 
@@ -6,7 +7,7 @@ int gcd(int x, int y)
     if (y==0)
         return x;
     else
-        gcd(y,x%y); //to implement Euclid's Method
+        return(gcd(y,x%y)); //to implement Euclid's Method
 }
 int main()
 {
