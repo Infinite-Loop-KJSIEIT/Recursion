@@ -22,11 +22,13 @@ public class GCD
                 m = jin.nextInt();
                 n = jin.nextInt();
                 if((m == 0) || (n == 0))
-                    throw new ZeroException();
+                    throw new ZeroException(m, n);
             }
             catch(ZeroException Z)
             {
                 System.out.println(Z.M);
+                System.out.println("Press 'E' to exit.\nPress any other key to continue: ");
+                C = jin.next().charAt(0);
                 continue;
             }
             
@@ -42,15 +44,20 @@ public class GCD
         if(m % n == 0)
             return(n);
         else
-            return(gcd(m,m % n));
+            return(gcd(n,m % n));
     }
 }
 
 class ZeroException extends Exception
 {
     public String M;
-    public ZeroException()
+    public ZeroException(int m, int n)
     {
-        M = "Input cannot be zero.\nPlease try again.\n\n";
+        if((m == 0) && (n == 0))
+            M = "Input cannot be zero.\nPlease try again.\n\n";
+        else if(m == 0)
+            M = "gcd(" + m + ", " + n + ") = " + n;
+        else
+            M = "gcd(" + m + ", " + n + ") = " + m;
     }
 }
